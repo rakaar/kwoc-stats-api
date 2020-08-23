@@ -1,0 +1,17 @@
+# kwoc-stats-api
+---
+## Local setup :
+ - `python3 -m venv env` - create a virtual environment
+ - `source env/bin/activate` - activate the virtual environment
+ - `pip install -r requirements.txt` - install the requirements
+ - `python app.py` - run the server
+---
+## Endpoints :
+students :
+ - `/stats/students` - get stats of all students
+ - `/stats/student/<user_name>` - get student stats for <user_name>
+ projects :
+ - `/stats/projects` - get stats of all projects
+ mentors :
+ - `/stats/mentor/<user_name>` - get mentor stats for <user_name>
+ ---
