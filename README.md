@@ -15,3 +15,4 @@ students :
  mentors :
  - `/stats/mentor/<user_name>` - get mentor stats for <user_name>
  ---
+ deployed [here](https://kwoc-stats-test-api.herokuapp.com/) .
