@@ -47,7 +47,7 @@ with open('projects.json') as f:
 # token = open(root_dir + '/secrets/token.txt', 'r').read().split('\n')[0]
 
 headers = {
-    'Authorization': 'token ' + 'f3932e69742fbeb5eb1e90c9dc6480a0bb803db0'
+    'Authorization': 'token ' + os.get_env('GITHUB_TOKEN')
 }
 
 languages_json = json.load(open("languages.json", 'r'))
