@@ -16,3 +16,7 @@ students :
  - `/stats/mentor/<user_name>` - get mentor stats for <user_name>
  ---
  deployed [here](https://kwoc-stats-test-api.herokuapp.com/) .
+ ---
+## Scripts :
+Short description :
+ - `no_commits.py` - generate `no_commits.csv` (name, email) with students having no commits
