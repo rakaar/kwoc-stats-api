@@ -21,3 +21,11 @@ students :
 ## Scripts :
 Short description :
  - `no_commits.py` - generate `no_commits.csv` (name, email) with students having no commits
+ ---
+## Code structure with pre-commit, black, bandit, flake8, isort :
+ - When a git commit is done your code get automatically re-formatted
+ - You will have to check the proposed modifications and re-add them in a continuous process of `git add`/`git commit`
+ - When your code passes the pre-commit checks, you will be able to finally commit your code and push to GitHub
+ - Various imports are automatically sorted for you
+ - Automatic checks verify that unused libraries and variables can't get committed
+ - Contributors are expected to follow this code of conduct as it guarantees code formatting quality

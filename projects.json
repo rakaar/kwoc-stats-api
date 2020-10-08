@@ -2102,7 +2102,7 @@
           "intro_full": "Voice Based email service for visually impaired",
           "tag": []
         },
-    
+
         {
           "title": "Communify",
           "id": 127,
@@ -2141,7 +2141,7 @@
             "Expense Manager is a Expense management mobile application that will read messages (SMS) to generate the expense report. It will show our monthly, weekly and daily online expenses and will give tips to invest and save money",
           "tag": []
         },
-    
+
         {
           "title": "Rubik's Cube Solver",
           "id": 129,
@@ -2158,7 +2158,7 @@
             "This project is guide for beginners who want to solve any scrambled rubik’s cube. A visual guide which demonstrates steps to follow to solve rubik’s cube with speed.",
           "tag": []
         },
-    
+
         {
           "title": "Image recoloring",
           "id": 130,
@@ -2189,7 +2189,7 @@
             "Once file is uploaded on the basis of file type system should display analytics:For text based files basic text processing is done along with the parse tree of the text.For Excel and CSV generate a table on webpage along with the search on any column .For Image RGB desegregation of image and changing dimension of image.For Video apply mask on video and crop video and download option available for downloading the processed video",
           "tag": []
         },
-    
+
         {
           "title": "Resume-Station",
           "id": 133,
