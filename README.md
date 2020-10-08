@@ -4,6 +4,7 @@
  - `python3 -m venv env` - create a virtual environment
  - `source env/bin/activate` - activate the virtual environment
  - `pip install -r requirements.txt` - install the requirements
+ - `pre-commit install` - install pre-commit
  - `python app.py` - run the server
 ---
 ## Endpoints :
