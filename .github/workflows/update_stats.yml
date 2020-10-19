@@ -1,5 +1,5 @@
-# This workflow will install Python dependencies, run tests and lint with a single version of Python
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+# This workflow will update the stats periodically
+# i.e. : runs generate_statistics.py, hence updating stats.json
 
 name: Update Statistics
 
@@ -22,7 +22,6 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         python -m pip install requests
     
     - name: generate statistics
@@ -30,7 +29,7 @@ jobs:
         python generate_statistics.py
         
       env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
         
     - name: Git Auto Commit
       id: auto-commit-action
@@ -39,6 +38,7 @@ jobs:
         commit_message: Update statistics
         commit_options: '--no-verify'
         file_pattern: stats.json
+        
     
     - name: "Run if changes have been detected"
       if: steps.auto-commit-action.outputs.changes_detected == 'true'
