@@ -1,0 +1,49 @@
+# This workflow will update the stats periodically
+# i.e. : runs generate_statistics.py, hence updating stats.json
+
+name: Update Statistics
+
+on:
+  schedule:
+    - cron: '*/2 * * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install requests
+    
+    - name: generate statistics
+      run: |
+        python generate_statistics.py
+        
+      env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
+        
+    - name: Git Auto Commit
+      id: auto-commit-action
+      uses: stefanzweifel/git-auto-commit-action@v4.5.1
+      with:
+        commit_message: Update statistics
+        commit_options: '--no-verify'
+        file_pattern: stats.json
+        
+    
+    - name: "Run if changes have been detected"
+      if: steps.auto-commit-action.outputs.changes_detected == 'true'
+      run: echo "Changes!"
+
+    - name: "Run if no changes have been detected"
+      if: steps.auto-commit-action.outputs.changes_detected == 'false'
+      run: echo "No Changes!"
